@@ -1,0 +1,42 @@
+/work/albertl_uri_edu/.conda/envs/sm/lib/python3.9/site-packages/xarray/backends/cfgrib_.py:27: UserWarning: Failed to load cfgrib - most likely there is a problem accessing the ecCodes library. Try `import cfgrib` to get the full error message
+  warnings.warn(
+/work/albertl_uri_edu/.conda/envs/sm/lib/python3.9/site-packages/xarray/backends/plugins.py:61: RuntimeWarning: Engine 'cfgrib' loading failed:
+Cannot find the ecCodes library
+  warnings.warn(f"Engine {name!r} loading failed:\n{ex}", RuntimeWarning)
+Traceback (most recent call last):
+  File "/work/albertl_uri_edu/.conda/envs/sm/lib/python3.9/site-packages/xarray/core/variable.py", line 117, in as_variable
+    obj = Variable(*obj)
+  File "/work/albertl_uri_edu/.conda/envs/sm/lib/python3.9/site-packages/xarray/core/variable.py", line 305, in __init__
+    self._dims = self._parse_dimensions(dims)
+  File "/work/albertl_uri_edu/.conda/envs/sm/lib/python3.9/site-packages/xarray/core/variable.py", line 573, in _parse_dimensions
+    raise ValueError(
+ValueError: dimensions ('lat', 'lon') must have the same length as the number of data dimensions, ndim=3
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/work/albertl_uri_edu/mid_e/v20_daily_to_monthly.py", line 30, in <module>
+    u = xr.Dataset(
+  File "/work/albertl_uri_edu/.conda/envs/sm/lib/python3.9/site-packages/xarray/core/dataset.py", line 750, in __init__
+    variables, coord_names, dims, indexes, _ = merge_data_and_coords(
+  File "/work/albertl_uri_edu/.conda/envs/sm/lib/python3.9/site-packages/xarray/core/merge.py", line 483, in merge_data_and_coords
+    return merge_core(
+  File "/work/albertl_uri_edu/.conda/envs/sm/lib/python3.9/site-packages/xarray/core/merge.py", line 632, in merge_core
+    collected = collect_variables_and_indexes(aligned)
+  File "/work/albertl_uri_edu/.conda/envs/sm/lib/python3.9/site-packages/xarray/core/merge.py", line 291, in collect_variables_and_indexes
+    variable = as_variable(variable, name=name)
+  File "/work/albertl_uri_edu/.conda/envs/sm/lib/python3.9/site-packages/xarray/core/variable.py", line 120, in as_variable
+    raise error.__class__(
+ValueError: Could not convert tuple of form (dims, data[, attrs, encoding]): (['lat', 'lon'], array([[[0.        , 0.        , 0.        , ...,        nan,
+                nan,        nan],
+        [0.        , 0.        , 0.        , ...,        nan,
+                nan,        nan],
+        [0.        , 0.        , 0.        , ...,        nan,
+                nan,        nan],
+        ...,
+        [0.04553968, 0.01517988, 0.        , ..., 1.7280087 ,
+         2.3984115 , 3.142545  ],
+        [0.        , 0.        , 0.        , ..., 0.        ,
+         0.43909127, 1.3453021 ],
+        [0.        , 0.        , 0.        , ..., 0.        ,
+         0.30029064, 0.92089045]]], dtype=float32), {'units': 'mm'}) to Variable.

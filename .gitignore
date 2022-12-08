@@ -1,0 +1,10 @@
+smap__part1__archived/
+*.zip
+__pycache__/
+*.tif
+*.npy
+*.pt
+.ipynb_checkpoints
+*.nc
+*.png
+*.txt
